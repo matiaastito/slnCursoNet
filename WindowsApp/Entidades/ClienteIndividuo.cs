@@ -6,14 +6,23 @@ using System.Threading.Tasks;
 
 namespace WindowsApp.Entidades
 {
-    public class ClienteIndividuo
+    public class ClienteIndividuo : Persona
     {
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        #region constructores
+        public ClienteIndividuo()
+        {
+        }
+
+        public ClienteIndividuo(string cuit, string nombre, string apellido, string email, string telefono, string direccion) : base(nombre, apellido, email, telefono, direccion)
+        {
+            CUIT = cuit;
+        }
+
+        #endregion
+
+        #region atributos
         public string CUIT { get; set; }
-        public string Email { get; set; }
-        public string Telefono { get; set; }
-        public string Direccion { get; set; }
+        #endregion
 
     }
 }
